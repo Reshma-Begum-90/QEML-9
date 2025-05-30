@@ -27,19 +27,26 @@ public class HomePage {
     @FindBy(xpath = "(//h4[@class=\"card-title\"]/a)[1]")
     private WebElement verifyingField;
 
+    @FindBy(xpath = "//a[text()=\"Laptops\"]")
+    private WebElement laptopCategory;
+
     WebDriverWait wait=new WebDriverWait(driver, Duration.ofSeconds(10));
 
-//    @Step("navigating to home page")
     public void navigateToHomePage(){
         driver.get("https://www.demoblaze.com/");
     }
-//    @Step("Clicking on category: {mobile}")
     public void clickCategory(String category){
-        wait.until(ExpectedConditions.elementToBeClickable(phoneCategory)).click();
+        WebElement categoryField;
+        if(category=="phone"){
+            categoryField=phoneCategory;
+        }
+        else {
+            categoryField=laptopCategory;
+        }
+        wait.until(ExpectedConditions.elementToBeClickable(categoryField)).click();
 
     }
-//    @Step("Verifying product: {mobile}")
-    public String verifyProduct(String category){
+    public String verifyProduct(){
       return wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("(//h4[@class=\"card-title\"]/a)[1]"))).getText();
     }
 }

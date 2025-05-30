@@ -5,5 +5,11 @@ Feature: Search Functionality
   Scenario: User searches for the product "Mobile"
 
     Given the user is on the homepage
-    When the user clicks on "Phone" in category section
-    Then the user should be displayed only "Phone"
+    When the user clicks on "phone" in category section
+    Then the user should be displayed only "phone"
+
+  Scenario: User searches for the product "Laptop"
+
+    Given the user is on the homepage
+    When the user clicks on "laptop" in category section
+    Then the user should be displayed only "laptop"

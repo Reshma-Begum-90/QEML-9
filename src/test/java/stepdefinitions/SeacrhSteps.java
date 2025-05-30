@@ -36,11 +36,17 @@ public class SeacrhSteps {
     }
 
     @Then("the user should be displayed only {string}")
-    public void userShouldSee(String category) {
-        String actualProduct = homePage.verifyProduct(category);
-        String expectedProduct = "Samsung galaxy s";  // Adjust based on your test logic
+    public void userShouldSee(String expectedProduct) {
+        String firstProduct;
+        if (expectedProduct=="Phone"){
+            firstProduct="Samsung galaxy s6";
+        }
+        else {
+            firstProduct="Sony vaio i5";
+        }
+        String actualProduct = homePage.verifyProduct();
         attachScreenshot("Product verification step");
-        Assert.assertEquals("Product mismatch!", expectedProduct, actualProduct);
+        Assert.assertEquals("Product mismatch!", firstProduct, actualProduct);
     }
 
     @Attachment(value = "{screenshotName}", type = "image/png")

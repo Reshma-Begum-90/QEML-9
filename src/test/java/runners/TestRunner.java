@@ -17,7 +17,7 @@ import java.io.File;
         glue = {"stepdefinitions","hooks"},
         plugin = {"pretty",
                 "io.qameta.allure.cucumber7jvm.AllureCucumber7Jvm",
-                "com.cucumber.listener.ExtentCucumberFormatter:target/cucumber-reports/report.html",
+                "com.cucumber.listener.ExtentCucumberFormatter",
                 "html:target/cucumber-report.html"
         }
 )

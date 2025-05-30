@@ -7,9 +7,3 @@ Feature: Search Functionality
     Given the user is on the homepage
     When the user clicks on "Phone" in category section
     Then the user should be displayed only "Phone"
-
-    Scenario: User searches for the product "Mobile"
-
-      Given the user is on the homepage
-      When the user clicks on "Phone" in category section
-      Then the user should be displayed only "Phone"
